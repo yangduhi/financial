@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
@@ -42,7 +43,9 @@ def build_source_map(query: str, result: dict[str, Any]) -> dict[str, Any]:
     trace = result.get("trace", {})
     return {
         "question": query,
+        "answer": result.get("answer"),
         "status": result.get("status"),
+        "parsed_intent": trace.get("parsed_intent", {}),
         "tool_plan": trace.get("tool_plan", {}),
         "entity": trace.get("resolve_entity", {}),
         "sources": {
@@ -53,22 +56,123 @@ def build_source_map(query: str, result: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def _check(name: str, passed: bool, detail: str) -> dict[str, Any]:
+    return {"name": name, "passed": passed, "detail": detail}
+
+
 def build_qa_report(result: dict[str, Any]) -> dict[str, Any]:
     status = result.get("status")
     answer = result.get("answer")
     trace = result.get("trace", {})
     entity_status = (trace.get("resolve_entity") or {}).get("status")
+    parsed_intent = trace.get("parsed_intent") or {}
+    tool_plan = trace.get("tool_plan") or {}
+    source_evidence = trace.get("get_source_evidence") or {}
+    recent_filings = trace.get("get_recent_filings") or {}
+    metric_trend = trace.get("get_metric_trend") or {}
+    quarterly_metrics = trace.get("get_quarterly_metrics") or {}
 
-    checks = {
-        "answer_present": bool(answer),
-        "tool_plan_present": bool((trace.get("tool_plan") or {}).get("tools")),
-        "entity_resolved": entity_status == "RESOLVED",
-        "status_supported": status in {"OK", "PARTIAL", "INSUFFICIENT_EVIDENCE"},
-    }
+    answer_present = bool(answer)
+    tool_plan_present = bool(tool_plan.get("tools"))
+    entity_resolved = entity_status == "RESOLVED"
+    status_supported = status in {"OK", "PARTIAL", "INSUFFICIENT_EVIDENCE"}
 
-    if status == "OK" and all(checks.values()):
+    answer_text = answer or ""
+    has_period_binding = (
+        bool(re.search(r"\b20\d{2}Q[1-4]\b", answer_text)) or "최근 분기" in answer_text
+    )
+    has_source_or_limitation = any(token in answer_text for token in ["근거:", "제한:", "출처:"])
+    has_uncertainty_when_needed = not (
+        status == "INSUFFICIENT_EVIDENCE"
+        and not any(token in answer_text for token in ["확보하지 못", "부족", "제한"])
+    )
+    evidence_request_respected = True
+    if parsed_intent.get("intent") == "filing_evidence":
+        evidence_request_respected = (
+            bool(source_evidence.get("evidence_count", 0)) or status == "INSUFFICIENT_EVIDENCE"
+        )
+
+    execution_checks = [
+        _check(
+            "answer_present",
+            answer_present,
+            "answer text exists" if answer_present else "missing answer",
+        ),
+        _check(
+            "tool_plan_present",
+            tool_plan_present,
+            "tool plan captured" if tool_plan_present else "missing tool plan",
+        ),
+        _check(
+            "entity_resolved",
+            entity_resolved,
+            "entity resolved" if entity_resolved else f"entity status: {entity_status}",
+        ),
+        _check(
+            "status_supported",
+            status_supported,
+            f"query status {status}" if status_supported else f"unsupported status {status}",
+        ),
+    ]
+
+    grounding_checks = [
+        _check(
+            "period_binding_present",
+            has_period_binding or parsed_intent.get("intent") == "filing_evidence",
+            (
+                "answer references fiscal period"
+                if has_period_binding
+                else "period tokens not found in answer"
+            ),
+        ),
+        _check(
+            "source_or_limitation_present",
+            has_source_or_limitation,
+            "answer includes source or limitation section"
+            if has_source_or_limitation
+            else "source/limitation section missing",
+        ),
+        _check(
+            "uncertainty_handling",
+            has_uncertainty_when_needed,
+            "uncertainty wording present when evidence is insufficient"
+            if has_uncertainty_when_needed
+            else "missing uncertainty wording for insufficient evidence",
+        ),
+        _check(
+            "evidence_request_respected",
+            evidence_request_respected,
+            "evidence request handled with evidence or explicit insufficiency"
+            if evidence_request_respected
+            else "evidence request missing support",
+        ),
+    ]
+
+    artifact_checks = [
+        _check(
+            "trend_trace_present",
+            bool(metric_trend) or parsed_intent.get("intent") != "metric_trend",
+            "trend trace present" if bool(metric_trend) else "trend trace missing",
+        ),
+        _check(
+            "compare_trace_present",
+            bool(quarterly_metrics) or parsed_intent.get("intent") != "metric_compare",
+            "compare trace present" if bool(quarterly_metrics) else "compare trace missing",
+        ),
+        _check(
+            "filing_trace_present",
+            bool(recent_filings) or parsed_intent.get("intent") != "filing_evidence",
+            "filing trace present" if bool(recent_filings) else "filing trace missing",
+        ),
+    ]
+
+    all_execution = all(item["passed"] for item in execution_checks)
+    all_grounding = all(item["passed"] for item in grounding_checks)
+    all_artifacts = all(item["passed"] for item in artifact_checks)
+
+    if status == "OK" and all_execution and all_grounding and all_artifacts:
         qa_status = "pass"
-    elif status in {"PARTIAL", "INSUFFICIENT_EVIDENCE"} and checks["answer_present"]:
+    elif status in {"PARTIAL", "INSUFFICIENT_EVIDENCE"} and all_execution and all_artifacts:
         qa_status = "warn"
     else:
         qa_status = "fail"
@@ -76,7 +180,14 @@ def build_qa_report(result: dict[str, Any]) -> dict[str, Any]:
     return {
         "status": qa_status,
         "query_status": status,
-        "checks": checks,
+        "summary": {
+            "execution_passed": all_execution,
+            "grounding_passed": all_grounding,
+            "artifact_passed": all_artifacts,
+        },
+        "execution_checks": execution_checks,
+        "grounding_checks": grounding_checks,
+        "artifact_checks": artifact_checks,
         "checked_at": datetime.now(UTC).isoformat(),
     }
 
