@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from datetime import UTC, datetime
 from typing import Any
 
 from .intent_tools import (
@@ -18,10 +19,11 @@ from .nl_answer_generator import (
 )
 from .nl_intent_parser import parse_intent
 from .nl_query_normalizer import normalize_query
+from .nl_run_artifacts import persist_query_run
 from .nl_tool_planner import plan_tools
 
 
-def run_query(query: str) -> dict[str, Any]:
+def run_query(query: str, persist: bool = False, run_id: str | None = None) -> dict[str, Any]:
     trace: dict[str, Any] = {"raw_query": query}
 
     normalized = normalize_query(query)
@@ -30,17 +32,29 @@ def run_query(query: str) -> dict[str, Any]:
     parsed = parse_intent(normalized["normalized_query"], normalized.get("entity_hint"))
     trace["parsed_intent"] = parsed
     if parsed["status"] != "OK":
-        return {"status": parsed["status"], "trace": trace, "answer": None}
+        result = {"status": parsed["status"], "trace": trace, "answer": None}
+        if persist:
+            run_id = run_id or f"nl_query_{datetime.now(UTC).strftime('%Y%m%d_%H%M%S')}"
+            result["artifacts"] = persist_query_run(run_id, query, result)
+        return result
 
     plan = plan_tools(parsed)
     trace["tool_plan"] = plan
     if plan["status"] != "OK":
-        return {"status": "PLANNER_FAILURE", "trace": trace, "answer": None}
+        result = {"status": "PLANNER_FAILURE", "trace": trace, "answer": None}
+        if persist:
+            run_id = run_id or f"nl_query_{datetime.now(UTC).strftime('%Y%m%d_%H%M%S')}"
+            result["artifacts"] = persist_query_run(run_id, query, result)
+        return result
 
     entity = resolve_entity(parsed["entity_hint"] or query)
     trace["resolve_entity"] = entity
     if entity["status"] != "RESOLVED":
-        return {"status": entity["status"], "trace": trace, "answer": None}
+        result = {"status": entity["status"], "trace": trace, "answer": None}
+        if persist:
+            run_id = run_id or f"nl_query_{datetime.now(UTC).strftime('%Y%m%d_%H%M%S')}"
+            result["artifacts"] = persist_query_run(run_id, query, result)
+        return result
 
     identifier = entity["selected"]["identifier"]
     intent = parsed["intent"]
@@ -67,7 +81,11 @@ def run_query(query: str) -> dict[str, Any]:
             trend_result,
             evidence_result=evidence_result,
         )
-        return {"status": trend_result["status"], "trace": trace, "answer": answer}
+        result = {"status": trend_result["status"], "trace": trace, "answer": answer}
+        if persist:
+            run_id = run_id or f"nl_query_{datetime.now(UTC).strftime('%Y%m%d_%H%M%S')}"
+            result["artifacts"] = persist_query_run(run_id, query, result)
+        return result
 
     if intent == "metric_compare":
         metrics = (
@@ -98,7 +116,11 @@ def run_query(query: str) -> dict[str, Any]:
             metric=parsed.get("metric"),
             evidence_result=evidence_result,
         )
-        return {"status": metrics_result["status"], "trace": trace, "answer": answer}
+        result = {"status": metrics_result["status"], "trace": trace, "answer": answer}
+        if persist:
+            run_id = run_id or f"nl_query_{datetime.now(UTC).strftime('%Y%m%d_%H%M%S')}"
+            result["artifacts"] = persist_query_run(run_id, query, result)
+        return result
 
     if intent == "filing_evidence":
         filings_result = get_recent_filings(
@@ -126,6 +148,14 @@ def run_query(query: str) -> dict[str, Any]:
             filings_result,
             evidence_result,
         )
-        return {"status": evidence_result["status"], "trace": trace, "answer": answer}
+        result = {"status": evidence_result["status"], "trace": trace, "answer": answer}
+        if persist:
+            run_id = run_id or f"nl_query_{datetime.now(UTC).strftime('%Y%m%d_%H%M%S')}"
+            result["artifacts"] = persist_query_run(run_id, query, result)
+        return result
 
-    return {"status": "UNSUPPORTED_INTENT", "trace": trace, "answer": None}
+    result = {"status": "UNSUPPORTED_INTENT", "trace": trace, "answer": None}
+    if persist:
+        run_id = run_id or f"nl_query_{datetime.now(UTC).strftime('%Y%m%d_%H%M%S')}"
+        result["artifacts"] = persist_query_run(run_id, query, result)
+    return result

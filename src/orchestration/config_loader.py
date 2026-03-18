@@ -31,3 +31,8 @@ def load_period_rules() -> dict[str, Any]:
 @lru_cache(maxsize=1)
 def load_doc_type_aliases() -> dict[str, Any]:
     return _read_yaml(CONFIG_DIR / "doc_type_aliases.yaml")
+
+
+@lru_cache(maxsize=1)
+def load_output_paths() -> dict[str, Any]:
+    return _read_yaml(CONFIG_DIR / "output_paths.yaml")
