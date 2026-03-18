@@ -1,0 +1,25 @@
+{
+  "ok": true,
+  "data": {
+    "series_id": "FEDFUNDS",
+    "latest_observation": {
+      "realtime_start": "2026-03-02",
+      "realtime_end": "2026-03-02",
+      "date": "2026-02-01",
+      "value": "3.64"
+    }
+  },
+  "provenance": [
+    {
+      "source_id": "fred-series-FEDFUNDS",
+      "source_type": "macro_data",
+      "source_system": "fred",
+      "retrieved_at": "2026-03-18T04:27:47.337407Z",
+      "as_of_datetime": "2026-02-01T00:00:00Z",
+      "license_scope": "external_public",
+      "confidence": 0.9,
+      "content_hash": "fred-series-FEDFUNDS"
+    }
+  ],
+  "errors": []
+}

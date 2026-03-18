@@ -11,4 +11,4 @@ from dotenv import load_dotenv
 @lru_cache(maxsize=1)
 def load_project_env() -> None:
     root = Path(__file__).resolve().parents[2]
-    load_dotenv(root / ".env", override=False)
+    load_dotenv(root / ".env", override=False, encoding="utf-8-sig")

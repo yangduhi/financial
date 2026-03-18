@@ -25,6 +25,9 @@
 - [x] STEP2-002 Implement `docs_gateway`
 - [x] STEP2-003 Implement `market_data_gateway`
 - [x] STEP2-004 Add smoke and contract tests scaffold
+- [x] STEP2-005 Connect Finnhub fallback and verification path
+- [x] STEP2-006 Add FRED macro gateway scaffold
+- [x] STEP2-007 Document provider field mapping
 - [x] STEP3-001 Implement canonical schemas
 - [ ] STEP3-002 Implement raw/parsed/normalized/derived storage flow
 - [ ] STEP3-003 Implement evidence graph output

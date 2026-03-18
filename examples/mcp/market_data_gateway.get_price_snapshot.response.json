@@ -14,6 +14,12 @@
       "share_basis": "n/a",
       "vendor": "financial_modeling_prep_stable",
       "market_session": "regular"
+    },
+    "verification": {
+      "provider": "finnhub",
+      "close": 133.07,
+      "as_of_datetime": "2026-03-17T20:00:00+00:00",
+      "delta": 0.0
     }
   },
   "provenance": [
@@ -21,7 +27,7 @@
       "source_id": "ANET-snapshot",
       "source_type": "market_data",
       "source_system": "financial_modeling_prep_stable",
-      "retrieved_at": "2026-03-18T04:22:00.600295Z",
+      "retrieved_at": "2026-03-18T04:27:46.037886Z",
       "as_of_datetime": "2026-03-18T00:00:00Z",
       "license_scope": "external_public",
       "confidence": 0.85,
