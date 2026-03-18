@@ -5,23 +5,23 @@ sources:
     enabled: true
     decision_status: decided
     vendor_name: sec_edgar_public
-    endpoint_or_connector: "https://www.sec.gov/files/company_tickers.json + https://data.sec.gov/submissions/"
+    endpoint_or_connector: "https://www.sec.gov/files/company_tickers.json + https://www.sec.gov/cgi-bin/browse-edgar"
     auth_required: true
     purpose:
       - primary_document_search
       - primary_document_fetch
       - citation_bundle
     auth_envs:
-      - SEC_USER_AGENT
+      - SEC_API_USER_AGENT
     license_scope: external_public
-    notes: "SEC EDGAR public endpoints are used. Requests must include a descriptive SEC_USER_AGENT."
+    notes: "SEC EDGAR public endpoints are used. Requests must include a descriptive SEC_API_USER_AGENT."
 
   market_primary:
     required: true
     enabled: true
     decision_status: decided
-    vendor_name: yahoo_finance_yfinance
-    endpoint_or_connector: "yfinance library over Yahoo Finance public endpoints"
+    vendor_name: hybrid_fmp_yfinance
+    endpoint_or_connector: "https://financialmodelingprep.com/stable + yfinance fallback"
     auth_required: false
     purpose:
       - price_snapshot
@@ -29,9 +29,42 @@ sources:
       - share_count
       - fx_rate
       - peer_lookup
-    auth_envs: []
+    auth_envs:
+      - FMP_API_KEY
     license_scope: external_public
-    notes: "Uses public market data via yfinance. Data availability varies by ticker and field."
+    notes: "Uses FMP where available and falls back to yfinance when the FMP plan blocks an endpoint."
+
+  market_secondary:
+    required: false
+    enabled: true
+    decision_status: decided
+    vendor_name: finnhub
+    endpoint_or_connector: "https://finnhub.io/docs/api"
+    auth_required: true
+    purpose:
+      - quote_fallback
+      - peer_verification
+      - profile_verification
+    auth_envs:
+      - FINNHUB_API_KEY
+    license_scope: external_public
+    notes: "Reserved for secondary verification and future fallback implementation."
+
+  macro_primary:
+    required: false
+    enabled: true
+    decision_status: decided
+    vendor_name: fred
+    endpoint_or_connector: "https://api.stlouisfed.org/fred"
+    auth_required: true
+    purpose:
+      - macro_series
+      - rates
+      - economics_backdrop
+    auth_envs:
+      - FRED_API_KEY
+    license_scope: external_public
+    notes: "Macro and rates provider for later economic overlays."
 
   research_memory:
     required: false

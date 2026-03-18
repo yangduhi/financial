@@ -15,6 +15,7 @@ from bs4 import BeautifulSoup
 from mcp.common.contracts import ToolResponseEnvelope
 from mcp.common.errors import AmbiguousResultError, ConfigurationError, SourceUnavailableError
 from mcp.common.provenance import CitationSpan, ProvenanceRecord
+from mcp.common.runtime import load_project_env
 
 SEC_COMPANY_TICKERS_URL = "https://www.sec.gov/files/company_tickers.json"
 SEC_BROWSE_EDGAR_URL = (
@@ -29,10 +30,11 @@ def _now() -> datetime:
 
 
 def _user_agent() -> str:
-    user_agent = os.getenv("SEC_USER_AGENT")
+    load_project_env()
+    user_agent = os.getenv("SEC_API_USER_AGENT") or os.getenv("SEC_USER_AGENT")
     if not user_agent:
         raise ConfigurationError(
-            "SEC_USER_AGENT environment variable is required for SEC EDGAR requests."
+            "SEC_API_USER_AGENT environment variable is required for SEC EDGAR requests."
         )
     return user_agent
 

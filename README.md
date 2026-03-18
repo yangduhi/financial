@@ -42,6 +42,13 @@
 이 경우 허용되는 작업은 문서 정리, contract scaffold 작성, 테스트 뼈대 작성까지다.  
 실제 live vendor 연동과 QA pass 판정은 보류한다.
 
+현재 기본 provider:
+
+- docs: SEC EDGAR
+- market: FMP + yfinance fallback
+- market secondary: Finnhub
+- macro optional: FRED
+
 ## Required Registries
 
 아래 파일은 사용자 결정사항과 실행 기준의 단일 저장소다.

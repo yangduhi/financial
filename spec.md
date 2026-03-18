@@ -54,6 +54,7 @@
 - `decision_status != "decided"` 인 필수 source 존재
 - `enabled != true` 인 필수 source 존재
 - `auth_required = true` 인 source에서 `auth_envs`가 비어 있음
+- `auth_required = true` 인 source의 실제 환경변수가 런타임에서 비어 있음
 
 ## 7. Input Contract
 
@@ -164,5 +165,5 @@ QA 정책은 `config/qa_thresholds.yaml`을 따른다.
 
 현재 문서가 실행 가능하려면 아래 항목이 반드시 채워져야 한다.
 
-- `SEC_USER_AGENT` 환경변수 설정
+- `SEC_API_USER_AGENT` 환경변수 설정
 - internal research memory 사용 여부 결정
