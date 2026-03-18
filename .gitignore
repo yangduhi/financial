@@ -1,0 +1,33 @@
+# Environments
+.env
+.venv
+.venv311
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Runtime artifacts
+runs/*
+!runs/.gitkeep
+
+# Data artifacts
+data/raw/*
+!data/raw/.gitkeep
+data/parsed/*
+!data/parsed/.gitkeep
+data/normalized/*
+!data/normalized/.gitkeep
+data/derived/*
+!data/derived/.gitkeep
+data/outputs/latest/*
+!data/outputs/latest/.gitkeep

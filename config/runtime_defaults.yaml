@@ -1,0 +1,24 @@
+version: 1
+workspace_root: "D:\\vscode\\Financial"
+python_interpreter: ".\\.venv311\\Scripts\\python.exe"
+workspace_revision_fallback: "nogit"
+
+execution_defaults:
+  strict_mode: true
+  allow_assisted_mode: true
+  include_internal_memory: false
+  latest_copy_enabled: true
+  latest_copy_root: "data/outputs/latest"
+  base_currency: "USD"
+  run_timestamp_timezone: "UTC"
+  promotion_requires_human_review: true
+
+input_defaults:
+  identifier_type: "ticker_exchange"
+  report_type: "earnings_review"
+  peer_list: []
+  region: null
+  house_style: null
+
+decision_notes:
+  house_style: "User decision required if a specific team format must be enforced."

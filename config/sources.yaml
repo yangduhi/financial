@@ -1,0 +1,47 @@
+version: 1
+sources:
+  docs_primary:
+    required: true
+    enabled: false
+    decision_status: required_user_decision
+    vendor_name: null
+    endpoint_or_connector: null
+    purpose:
+      - primary_document_search
+      - primary_document_fetch
+      - citation_bundle
+    auth_envs:
+      - DOCS_PRIMARY_API_KEY
+    license_scope: null
+    notes: "Step 2 live implementation is blocked until vendor_name, endpoint_or_connector, and license_scope are decided."
+
+  market_primary:
+    required: true
+    enabled: false
+    decision_status: required_user_decision
+    vendor_name: null
+    endpoint_or_connector: null
+    purpose:
+      - price_snapshot
+      - fundamentals
+      - share_count
+      - fx_rate
+      - peer_lookup
+    auth_envs:
+      - MARKET_PRIMARY_API_KEY
+    license_scope: null
+    notes: "Step 2 live implementation is blocked until vendor_name, endpoint_or_connector, and license_scope are decided."
+
+  research_memory:
+    required: false
+    enabled: false
+    decision_status: deferred
+    vendor_name: null
+    endpoint_or_connector: null
+    purpose:
+      - internal_memory_search
+      - house_report_lookup
+    auth_envs:
+      - RESEARCH_MEMORY_TOKEN
+    license_scope: internal_research
+    notes: "Do not enable until access control and audit logging design are approved."

@@ -1,0 +1,40 @@
+# Tasks
+
+## Done
+
+- [x] DOC-001 Authoritative document order defined in `README.md`
+- [x] DOC-002 `spec.md`, `plan.md`, `tasks.md` created
+- [x] DOC-003 Decision registries under `config/` created
+- [x] DOC-004 Example input and output files created under `examples/`
+- [x] DOC-005 Legacy root step documents removed from execution path
+
+## Blocked Decisions
+
+- [ ] DEC-001 Choose actual document vendor and update `config/sources.yaml`
+- [ ] DEC-002 Choose actual market data vendor and update `config/sources.yaml`
+- [ ] DEC-003 Set required QA tolerances in `config/qa_thresholds.yaml`
+- [ ] DEC-004 Confirm house style default in `config/runtime_defaults.yaml`
+
+## Pending Implementation
+
+- [ ] STEP1-001 Create `AGENTS.md`
+- [ ] STEP1-002 Create `.codex/config.toml`
+- [ ] STEP1-003 Create `.codex/prompts/`
+- [ ] STEP1-004 Create repo scaffold from `docs/step_1_진행내용.md`
+- [ ] STEP2-001 Implement MCP common contract layer
+- [ ] STEP2-002 Implement `docs_gateway`
+- [ ] STEP2-003 Implement `market_data_gateway`
+- [ ] STEP2-004 Add smoke and contract tests
+- [ ] STEP3-001 Implement canonical schemas
+- [ ] STEP3-002 Implement raw/parsed/normalized/derived storage flow
+- [ ] STEP3-003 Implement evidence graph output
+- [ ] STEP4-001 Implement input loader and run manifest creation
+- [ ] STEP4-002 Implement report renderer and source map generator
+- [ ] STEP4-003 Make `review_pack.md` mandatory output
+- [ ] STEP5-001 Implement QA registry and checks
+- [ ] STEP5-002 Implement `qa_report.json` generation
+- [ ] STEP6-001 Finalize runbook and recovery procedure
+
+## Execution Rule
+
+Blocked decisions must be resolved before live data integration or QA promotion work begins.

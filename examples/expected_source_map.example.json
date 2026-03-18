@@ -1,0 +1,36 @@
+{
+  "claims": [
+    {
+      "claim_id": "claim_001",
+      "text": "Revenue increased year over year.",
+      "source_ids": [
+        "doc_earnings_release_q1",
+        "doc_transcript_q1"
+      ]
+    }
+  ],
+  "metrics": [
+    {
+      "name": "revenue",
+      "value": 1000.0,
+      "currency": "USD",
+      "unit": "million",
+      "source_ids": [
+        "doc_earnings_release_q1"
+      ]
+    }
+  ],
+  "documents": [
+    {
+      "document_id": "doc_earnings_release_q1",
+      "document_type": "earnings_release",
+      "published_at": "2026-03-17T21:00:00Z"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "runs/2026-03-18_ANET_NYSE_earnings_review_120000Z/outputs/summary.md",
+      "artifact_type": "summary"
+    }
+  ]
+}

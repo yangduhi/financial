@@ -1,0 +1,47 @@
+version: 1
+global_rules:
+  source_map_required: true
+  review_pack_required: true
+  fail_on_recency_violation: true
+  fail_on_schema_violation: true
+  fail_on_unresolved_discrepancy: true
+
+metric_tolerances:
+  revenue:
+    tolerance_type: percent
+    tolerance_value: null
+    decision_status: required_user_decision
+  gross_margin:
+    tolerance_type: absolute_points
+    tolerance_value: null
+    decision_status: required_user_decision
+  operating_margin:
+    tolerance_type: absolute_points
+    tolerance_value: null
+    decision_status: required_user_decision
+  eps:
+    tolerance_type: absolute
+    tolerance_value: null
+    decision_status: required_user_decision
+  fcf:
+    tolerance_type: percent
+    tolerance_value: null
+    decision_status: required_user_decision
+  share_count:
+    tolerance_type: percent
+    tolerance_value: null
+    decision_status: required_user_decision
+  net_cash_or_debt:
+    tolerance_type: percent
+    tolerance_value: null
+    decision_status: required_user_decision
+  guidance_ranges:
+    tolerance_type: percent
+    tolerance_value: null
+    decision_status: required_user_decision
+
+confidence_bands:
+  high: null
+  medium: null
+  low: null
+  decision_status: required_user_decision

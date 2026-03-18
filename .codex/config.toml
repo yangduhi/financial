@@ -1,0 +1,38 @@
+[project]
+name = "financial-research-workbench"
+workspace_root = "D:\\vscode\\Financial"
+python_interpreter = ".\\.venv311\\Scripts\\python.exe"
+
+[documents]
+readme = "README.md"
+spec = "spec.md"
+plan = "plan.md"
+tasks = "tasks.md"
+steps_glob = "docs/step_*_진행내용.md"
+archive_glob = "docs/archive/*"
+
+[paths]
+config_dir = "config"
+examples_dir = "examples"
+docs_dir = "docs"
+mcp_dir = "mcp"
+src_dir = "src"
+tests_dir = "tests"
+evals_dir = "evals"
+data_dir = "data"
+runs_dir = "runs"
+
+[execution]
+strict_mode_default = true
+latest_promotion_requires_qa_pass = true
+allow_archived_docs_as_authority = false
+
+[quality]
+require_source_map = true
+require_review_pack = true
+require_structured_output_before_markdown = true
+
+[blocked_decisions]
+source_vendor_registry = "config/sources.yaml"
+qa_threshold_registry = "config/qa_thresholds.yaml"
+runtime_defaults_registry = "config/runtime_defaults.yaml"

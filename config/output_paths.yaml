@@ -1,0 +1,31 @@
+version: 1
+run_id_pattern: "{as_of_date}_{identifier_slug}_{report_type}_{utc_hhmmss}"
+
+paths:
+  run_root: "runs/{run_id}"
+  input_file: "runs/{run_id}/input.json"
+  manifest_file: "runs/{run_id}/manifest.json"
+  logs_dir: "runs/{run_id}/logs"
+  artifacts_dir: "runs/{run_id}/artifacts"
+  raw_dir: "runs/{run_id}/artifacts/raw"
+  parsed_dir: "runs/{run_id}/artifacts/parsed"
+  normalized_dir: "runs/{run_id}/artifacts/normalized"
+  derived_dir: "runs/{run_id}/artifacts/derived"
+  evidence_dir: "runs/{run_id}/evidence"
+  evidence_graph_file: "runs/{run_id}/evidence/evidence_graph.jsonl"
+  outputs_dir: "runs/{run_id}/outputs"
+  summary_file: "runs/{run_id}/outputs/summary.md"
+  kpi_summary_file: "runs/{run_id}/outputs/kpi_summary.json"
+  source_map_file: "runs/{run_id}/outputs/source_map.json"
+  review_pack_file: "runs/{run_id}/outputs/review_pack.md"
+  qa_dir: "runs/{run_id}/qa"
+  qa_report_file: "runs/{run_id}/qa/qa_report.json"
+  failure_report_file: "runs/{run_id}/qa/failure_report.md"
+  latest_output_root: "data/outputs/latest"
+
+promotion:
+  copy_to_latest_on_status:
+    - qa_passed
+  never_copy_to_latest_on_status:
+    - failed
+    - qa_failed

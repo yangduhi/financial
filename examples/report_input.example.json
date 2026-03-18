@@ -1,0 +1,17 @@
+{
+  "identifier": {
+    "type": "ticker_exchange",
+    "value": "ANET",
+    "exchange": "NYSE"
+  },
+  "report_type": "earnings_review",
+  "as_of_date": "2026-03-18",
+  "strict_mode": true,
+  "base_currency": "USD",
+  "peer_list": [
+    "CSCO",
+    "JNPR",
+    "MSI"
+  ],
+  "include_internal_memory": false
+}

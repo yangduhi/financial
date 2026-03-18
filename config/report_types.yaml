@@ -1,0 +1,42 @@
+version: 1
+report_types:
+  earnings_review:
+    prompt_file: ".codex/prompts/earnings_review.md"
+    output_subdir: "outputs"
+    requires_review_pack: true
+    minimum_primary_sources: 2
+    required_sections:
+      - executive_summary
+      - key_kpis
+      - what_improved
+      - what_deteriorated
+      - guidance_and_management_commentary
+      - customer_or_end_market_commentary
+      - risks_and_unknowns
+      - source_notes
+
+  initiation_note:
+    prompt_file: ".codex/prompts/initiation_note.md"
+    output_subdir: "outputs"
+    requires_review_pack: true
+    minimum_primary_sources: 2
+    required_sections:
+      - executive_summary
+      - business_overview
+      - key_kpis
+      - thesis
+      - risks_and_unknowns
+      - source_notes
+
+  valuation_memo:
+    prompt_file: ".codex/prompts/valuation_memo.md"
+    output_subdir: "outputs"
+    requires_review_pack: true
+    minimum_primary_sources: 2
+    required_sections:
+      - executive_summary
+      - key_kpis
+      - valuation_framework
+      - scenario_analysis
+      - risks_and_unknowns
+      - source_notes

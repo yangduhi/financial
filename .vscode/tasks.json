@@ -1,0 +1,76 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "lint",
+      "type": "shell",
+      "command": ".\\.venv311\\Scripts\\python.exe",
+      "args": [
+        "-m",
+        "ruff",
+        "check",
+        "."
+      ],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "format",
+      "type": "shell",
+      "command": ".\\.venv311\\Scripts\\python.exe",
+      "args": [
+        "-m",
+        "ruff",
+        "format",
+        "."
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "type-check",
+      "type": "shell",
+      "command": ".\\.venv311\\Scripts\\python.exe",
+      "args": [
+        "-m",
+        "mypy",
+        "src",
+        "mcp"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "test",
+      "type": "shell",
+      "command": ".\\.venv311\\Scripts\\python.exe",
+      "args": [
+        "-m",
+        "pytest",
+        "tests"
+      ],
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "test-contracts",
+      "type": "shell",
+      "command": ".\\.venv311\\Scripts\\python.exe",
+      "args": [
+        "-m",
+        "pytest",
+        "tests\\contracts"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "test-integration",
+      "type": "shell",
+      "command": ".\\.venv311\\Scripts\\python.exe",
+      "args": [
+        "-m",
+        "pytest",
+        "tests\\integration"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}

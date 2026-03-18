@@ -1,0 +1,20 @@
+{
+  "run_id": "2026-03-18_ANET_NYSE_earnings_review_120000Z",
+  "workspace_root": "D:\\vscode\\Financial",
+  "workspace_revision": "nogit",
+  "status": "qa_passed",
+  "identifier": {
+    "type": "ticker_exchange",
+    "value": "ANET",
+    "exchange": "NYSE"
+  },
+  "report_type": "earnings_review",
+  "started_at": "2026-03-18T12:00:00Z",
+  "completed_at": "2026-03-18T12:08:00Z",
+  "inputs_file": "runs/2026-03-18_ANET_NYSE_earnings_review_120000Z/input.json",
+  "tool_versions": {
+    "python": "3.11.x"
+  },
+  "schema_version": "1",
+  "retries_of": null
+}
