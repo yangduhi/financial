@@ -1,0 +1,44 @@
+[
+  {
+    "id": "q001",
+    "question": "ANET의 최근 4분기 영업이익 변동을 알려줘.",
+    "status": "OK",
+    "passed": true,
+    "reasons": []
+  },
+  {
+    "id": "q002",
+    "question": "ANET의 최근 4분기 EPS 추세를 요약해줘.",
+    "status": "OK",
+    "passed": true,
+    "reasons": []
+  },
+  {
+    "id": "q003",
+    "question": "ANET의 최근 4분기 FCF 변동을 알려줘.",
+    "status": "OK",
+    "passed": true,
+    "reasons": []
+  },
+  {
+    "id": "q004",
+    "question": "ANET의 최근 4분기 순이익 흐름을 알려줘.",
+    "status": "OK",
+    "passed": true,
+    "reasons": []
+  },
+  {
+    "id": "q005",
+    "question": "Arista Networks의 최근 4분기 영업이익 변동을 알려줘.",
+    "status": "OK",
+    "passed": true,
+    "reasons": []
+  },
+  {
+    "id": "q006",
+    "question": "Arista의 최근 4분기 EPS 추세를 요약해줘.",
+    "status": "OK",
+    "passed": true,
+    "reasons": []
+  }
+]

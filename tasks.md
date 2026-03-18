@@ -54,8 +54,8 @@
 - [x] MCPP-011 Implement `src/orchestration/nl_intent_parser.py`
 - [x] MCPP-012 Implement `src/orchestration/nl_tool_planner.py`
 - [x] MCPP-013 Implement `src/orchestration/nl_answer_generator.py`
-- [ ] MCPP-014 Add natural-language query evaluation set
-- [ ] MCPP-015 Add tool trace and failure logging
+- [x] MCPP-014 Add natural-language query evaluation set
+- [x] MCPP-015 Add tool trace and failure logging
 
 ## Execution Rule
 

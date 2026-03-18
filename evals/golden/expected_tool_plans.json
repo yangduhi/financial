@@ -1,0 +1,8 @@
+{
+  "q001": ["resolve_entity", "get_metric_trend"],
+  "q002": ["resolve_entity", "get_metric_trend"],
+  "q003": ["resolve_entity", "get_metric_trend"],
+  "q004": ["resolve_entity", "get_metric_trend"],
+  "q005": ["resolve_entity", "get_metric_trend"],
+  "q006": ["resolve_entity", "get_metric_trend"]
+}

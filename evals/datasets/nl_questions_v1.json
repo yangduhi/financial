@@ -1,0 +1,50 @@
+[
+  {
+    "id": "q001",
+    "category": "metric_trend",
+    "question": "ANET의 최근 4분기 영업이익 변동을 알려줘.",
+    "expected_status": ["OK", "PARTIAL"],
+    "expected_tool_plan": ["resolve_entity", "get_metric_trend"],
+    "required_answer_substrings": ["영업이익", "핵심 수치", "근거"]
+  },
+  {
+    "id": "q002",
+    "category": "metric_trend",
+    "question": "ANET의 최근 4분기 EPS 추세를 요약해줘.",
+    "expected_status": ["OK", "PARTIAL"],
+    "expected_tool_plan": ["resolve_entity", "get_metric_trend"],
+    "required_answer_substrings": ["EPS", "핵심 수치", "근거"]
+  },
+  {
+    "id": "q003",
+    "category": "metric_trend",
+    "question": "ANET의 최근 4분기 FCF 변동을 알려줘.",
+    "expected_status": ["OK", "PARTIAL"],
+    "expected_tool_plan": ["resolve_entity", "get_metric_trend"],
+    "required_answer_substrings": ["FCF", "핵심 수치", "근거"]
+  },
+  {
+    "id": "q004",
+    "category": "metric_trend",
+    "question": "ANET의 최근 4분기 순이익 흐름을 알려줘.",
+    "expected_status": ["OK", "PARTIAL"],
+    "expected_tool_plan": ["resolve_entity", "get_metric_trend"],
+    "required_answer_substrings": ["순이익", "핵심 수치", "근거"]
+  },
+  {
+    "id": "q005",
+    "category": "metric_trend",
+    "question": "Arista Networks의 최근 4분기 영업이익 변동을 알려줘.",
+    "expected_status": ["OK", "PARTIAL"],
+    "expected_tool_plan": ["resolve_entity", "get_metric_trend"],
+    "required_answer_substrings": ["영업이익", "핵심 수치", "근거"]
+  },
+  {
+    "id": "q006",
+    "category": "metric_trend",
+    "question": "Arista의 최근 4분기 EPS 추세를 요약해줘.",
+    "expected_status": ["OK", "PARTIAL"],
+    "expected_tool_plan": ["resolve_entity", "get_metric_trend"],
+    "required_answer_substrings": ["EPS", "핵심 수치", "근거"]
+  }
+]
