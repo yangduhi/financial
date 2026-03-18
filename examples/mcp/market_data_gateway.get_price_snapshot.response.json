@@ -1,5 +1,32 @@
 {
-  "ok": false,
-  "status": "placeholder",
-  "reason": "Live vendor decision is still blocked in config/sources.yaml"
+  "ok": true,
+  "data": {
+    "ticker": "ANET",
+    "snapshot": {
+      "close": 133.07000732421875,
+      "open": 135.00999450683594,
+      "high": 136.6999969482422,
+      "low": 132.3350067138672,
+      "volume": 5922358.0,
+      "as_of_datetime": "2026-03-17T00:00:00-04:00",
+      "currency": "USD",
+      "unit": "price",
+      "share_basis": "n/a",
+      "vendor": "yahoo_finance_yfinance",
+      "market_session": "regular"
+    }
+  },
+  "provenance": [
+    {
+      "source_id": "ANET-snapshot",
+      "source_type": "market_data",
+      "source_system": "yahoo_finance_yfinance",
+      "retrieved_at": "2026-03-18T03:51:17.545366Z",
+      "as_of_datetime": "2026-03-18T03:51:17.545366Z",
+      "license_scope": "external_public",
+      "confidence": 0.7,
+      "content_hash": "ANET-snapshot"
+    }
+  ],
+  "errors": []
 }

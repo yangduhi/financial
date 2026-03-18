@@ -34,6 +34,7 @@
 
 - `config/sources.yaml`의 필수 소스에 `decision_status: decided`가 아닌 항목이 있음
 - `config/sources.yaml`의 필수 소스가 `enabled: true`가 아님
+- `config/sources.yaml`에서 `auth_required: true` 인 source의 필수 환경변수가 비어 있음
 - `config/qa_thresholds.yaml`의 필수 tolerance 값이 `null`임
 - Step 1 필수 산출물인 `AGENTS.md` 또는 `.codex/config.toml`이 없음
 - 입력 파일이 `spec.md`의 입력 계약을 만족하지 않음

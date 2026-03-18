@@ -9,39 +9,39 @@ global_rules:
 metric_tolerances:
   revenue:
     tolerance_type: percent
-    tolerance_value: null
-    decision_status: required_user_decision
+    tolerance_value: 1.0
+    decision_status: decided
   gross_margin:
     tolerance_type: absolute_points
-    tolerance_value: null
-    decision_status: required_user_decision
+    tolerance_value: 0.5
+    decision_status: decided
   operating_margin:
     tolerance_type: absolute_points
-    tolerance_value: null
-    decision_status: required_user_decision
+    tolerance_value: 0.5
+    decision_status: decided
   eps:
     tolerance_type: absolute
-    tolerance_value: null
-    decision_status: required_user_decision
+    tolerance_value: 0.02
+    decision_status: decided
   fcf:
     tolerance_type: percent
-    tolerance_value: null
-    decision_status: required_user_decision
+    tolerance_value: 2.0
+    decision_status: decided
   share_count:
     tolerance_type: percent
-    tolerance_value: null
-    decision_status: required_user_decision
+    tolerance_value: 1.0
+    decision_status: decided
   net_cash_or_debt:
     tolerance_type: percent
-    tolerance_value: null
-    decision_status: required_user_decision
+    tolerance_value: 1.0
+    decision_status: decided
   guidance_ranges:
     tolerance_type: percent
-    tolerance_value: null
-    decision_status: required_user_decision
+    tolerance_value: 1.0
+    decision_status: decided
 
 confidence_bands:
-  high: null
-  medium: null
-  low: null
-  decision_status: required_user_decision
+  high: 0.85
+  medium: 0.6
+  low: 0.35
+  decision_status: decided

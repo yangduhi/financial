@@ -47,13 +47,13 @@
 
 - 문서 조회용 source 1개 이상
 - 시장 데이터 조회용 source 1개 이상
-- 각 source에 `purpose`, `auth_envs`, `license_scope`, `decision_status` 존재
+- 각 source에 `purpose`, `auth_required`, `auth_envs`, `license_scope`, `decision_status` 존재
 
 차단 조건:
 
 - `decision_status != "decided"` 인 필수 source 존재
 - `enabled != true` 인 필수 source 존재
-- `auth_envs`가 비어 있음
+- `auth_required = true` 인 source에서 `auth_envs`가 비어 있음
 
 ## 7. Input Contract
 
@@ -164,7 +164,5 @@ QA 정책은 `config/qa_thresholds.yaml`을 따른다.
 
 현재 문서가 실행 가능하려면 아래 항목이 반드시 채워져야 한다.
 
-- 실제 문서 벤더 선택
-- 실제 시장 데이터 벤더 선택
-- 필수 QA tolerance 값
-- house style 결정 여부
+- `SEC_USER_AGENT` 환경변수 설정
+- internal research memory 사용 여부 결정

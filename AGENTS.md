@@ -22,6 +22,7 @@
 
 - 출처 없는 숫자를 쓰지 않는다.
 - 사실, 추론, 의견을 명시적으로 구분한다.
+- 서술은 짧고 기관형 메모 톤으로 작성한다.
 - 모호한 entity 매칭은 임의 선택하지 않고 실패 처리한다.
 - 불일치 수치를 조용히 덮지 않는다.
 - 검증할 수 없는 항목은 `[UNKNOWN]`으로 표시한다.
@@ -44,6 +45,7 @@
 - `ticker` 단독 문자열은 허용하지 않는다.
 - 입력은 `spec.md`의 `identifier` 계약을 따른다.
 - `report_type`은 `config/report_types.yaml`의 정의만 사용한다.
+- `house_style` 기본값은 `concise_evidence_first`로 간주한다.
 
 ## Output Rules
 
@@ -51,14 +53,15 @@
 - `data/outputs/latest/`는 `qa_passed` 또는 승인된 `warn` 결과만 갱신한다.
 - 실패 run은 latest output을 갱신하지 않는다.
 - 필수 출력은 최소 `summary.md`, `kpi_summary.json`, `source_map.json`, `review_pack.md`, `qa_report.json`, `manifest.json`, `evidence_graph.jsonl`이다.
+- review pack에는 unresolved discrepancy, unknown, low confidence claim을 반드시 포함한다.
 
 ## Blocked Decision Rules
 
 아래 중 하나라도 비어 있으면 live 구현을 시작하지 않는다.
 
-- `config/sources.yaml`의 필수 vendor 결정
-- `config/qa_thresholds.yaml`의 필수 tolerance 값
-- 필요한 house style 결정
+- `config/sources.yaml`의 필수 source가 미결정 상태
+- `config/sources.yaml`에서 `auth_required: true` 인 source의 환경변수 미설정
+- `config/qa_thresholds.yaml`의 필수 tolerance 미설정
 
 이 경우 허용되는 작업은 스캐폴드, contract, 테스트 골격, 문서 정리까지다.
 
@@ -78,3 +81,4 @@
 - low confidence claim
 - valuation implication
 - investment opinion
+- public source 한계로 confidence가 낮아진 항목

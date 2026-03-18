@@ -18,7 +18,7 @@ input_defaults:
   report_type: "earnings_review"
   peer_list: []
   region: null
-  house_style: null
+  house_style: "concise_evidence_first"
 
 decision_notes:
-  house_style: "User decision required if a specific team format must be enforced."
+  house_style: "Default team style: concise, evidence-first, uncertainty-visible."

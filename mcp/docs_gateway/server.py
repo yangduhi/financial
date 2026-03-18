@@ -1,8 +1,10 @@
-"""Scaffold for the document retrieval MCP gateway."""
+"""Document retrieval MCP gateway backed by SEC EDGAR."""
 
 from __future__ import annotations
 
 from dataclasses import dataclass
+
+from . import sec_edgar
 
 
 @dataclass(frozen=True)
@@ -27,3 +29,23 @@ def list_tools() -> list[ToolDefinition]:
     """Return the supported tools for the scaffold server."""
 
     return DOCS_GATEWAY_TOOLS
+
+
+def search_documents(**kwargs):
+    return sec_edgar.search_documents(**kwargs)
+
+
+def fetch_document(**kwargs):
+    return sec_edgar.fetch_document(**kwargs)
+
+
+def extract_sections(**kwargs):
+    return sec_edgar.extract_sections(**kwargs)
+
+
+def get_latest_primary_sources(**kwargs):
+    return sec_edgar.get_latest_primary_sources(**kwargs)
+
+
+def build_citation_bundle(**kwargs):
+    return sec_edgar.build_citation_bundle(**kwargs)

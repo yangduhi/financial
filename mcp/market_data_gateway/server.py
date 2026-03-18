@@ -1,8 +1,10 @@
-"""Scaffold for the market data MCP gateway."""
+"""Market data MCP gateway backed by yfinance."""
 
 from __future__ import annotations
 
 from dataclasses import dataclass
+
+from . import yfinance_provider
 
 
 @dataclass(frozen=True)
@@ -25,3 +27,27 @@ def list_tools() -> list[ToolDefinition]:
     """Return the supported tools for the scaffold server."""
 
     return MARKET_DATA_GATEWAY_TOOLS
+
+
+def get_price_snapshot(**kwargs):
+    return yfinance_provider.get_price_snapshot(**kwargs)
+
+
+def get_price_history(**kwargs):
+    return yfinance_provider.get_price_history(**kwargs)
+
+
+def get_fundamentals(**kwargs):
+    return yfinance_provider.get_fundamentals(**kwargs)
+
+
+def get_share_count(**kwargs):
+    return yfinance_provider.get_share_count(**kwargs)
+
+
+def get_fx_rate(**kwargs):
+    return yfinance_provider.get_fx_rate(**kwargs)
+
+
+def get_peer_set(**kwargs):
+    return yfinance_provider.get_peer_set(**kwargs)

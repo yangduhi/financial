@@ -2,35 +2,36 @@ version: 1
 sources:
   docs_primary:
     required: true
-    enabled: false
-    decision_status: required_user_decision
-    vendor_name: null
-    endpoint_or_connector: null
+    enabled: true
+    decision_status: decided
+    vendor_name: sec_edgar_public
+    endpoint_or_connector: "https://www.sec.gov/files/company_tickers.json + https://data.sec.gov/submissions/"
+    auth_required: true
     purpose:
       - primary_document_search
       - primary_document_fetch
       - citation_bundle
     auth_envs:
-      - DOCS_PRIMARY_API_KEY
-    license_scope: null
-    notes: "Step 2 live implementation is blocked until vendor_name, endpoint_or_connector, and license_scope are decided."
+      - SEC_USER_AGENT
+    license_scope: external_public
+    notes: "SEC EDGAR public endpoints are used. Requests must include a descriptive SEC_USER_AGENT."
 
   market_primary:
     required: true
-    enabled: false
-    decision_status: required_user_decision
-    vendor_name: null
-    endpoint_or_connector: null
+    enabled: true
+    decision_status: decided
+    vendor_name: yahoo_finance_yfinance
+    endpoint_or_connector: "yfinance library over Yahoo Finance public endpoints"
+    auth_required: false
     purpose:
       - price_snapshot
       - fundamentals
       - share_count
       - fx_rate
       - peer_lookup
-    auth_envs:
-      - MARKET_PRIMARY_API_KEY
-    license_scope: null
-    notes: "Step 2 live implementation is blocked until vendor_name, endpoint_or_connector, and license_scope are decided."
+    auth_envs: []
+    license_scope: external_public
+    notes: "Uses public market data via yfinance. Data availability varies by ticker and field."
 
   research_memory:
     required: false
@@ -38,6 +39,7 @@ sources:
     decision_status: deferred
     vendor_name: null
     endpoint_or_connector: null
+    auth_required: true
     purpose:
       - internal_memory_search
       - house_report_lookup

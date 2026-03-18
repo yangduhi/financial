@@ -10,10 +10,10 @@
 
 ## Blocked Decisions
 
-- [ ] DEC-001 Choose actual document vendor and update `config/sources.yaml`
-- [ ] DEC-002 Choose actual market data vendor and update `config/sources.yaml`
-- [ ] DEC-003 Set required QA tolerances in `config/qa_thresholds.yaml`
-- [ ] DEC-004 Confirm house style default in `config/runtime_defaults.yaml`
+- [x] DEC-001 Choose actual document vendor and update `config/sources.yaml`
+- [x] DEC-002 Choose actual market data vendor and update `config/sources.yaml`
+- [x] DEC-003 Set required QA tolerances in `config/qa_thresholds.yaml`
+- [x] DEC-004 Confirm house style default in `config/runtime_defaults.yaml`
 
 ## Pending Implementation
 
@@ -22,8 +22,8 @@
 - [x] STEP1-003 Create `.codex/prompts/`
 - [x] STEP1-004 Create repo scaffold from `docs/step_1_진행내용.md`
 - [x] STEP2-001 Implement MCP common contract layer scaffold
-- [ ] STEP2-002 Implement `docs_gateway`
-- [ ] STEP2-003 Implement `market_data_gateway`
+- [x] STEP2-002 Implement `docs_gateway`
+- [x] STEP2-003 Implement `market_data_gateway`
 - [x] STEP2-004 Add smoke and contract tests scaffold
 - [x] STEP3-001 Implement canonical schemas
 - [ ] STEP3-002 Implement raw/parsed/normalized/derived storage flow

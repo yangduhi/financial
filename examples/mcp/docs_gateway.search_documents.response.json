@@ -1,5 +1,232 @@
 {
-  "ok": false,
-  "status": "placeholder",
-  "reason": "Live vendor decision is still blocked in config/sources.yaml"
+  "ok": true,
+  "data": {
+    "results": [
+      {
+        "document_id": "1596532:0001596532-26-000013",
+        "document_type": "10-K",
+        "issuer": "Arista Networks, Inc.",
+        "published_at": "2026-02-17",
+        "title": "10-K  - Annual report [Section 13 and 15(d), not S-K Item 405]",
+        "uri": "https://www.sec.gov/Archives/edgar/data/1596532/000159653226000013/0001596532-26-000013-index.htm",
+        "accession_number": "0001596532-26-000013"
+      },
+      {
+        "document_id": "1596532:0001596532-26-000010",
+        "document_type": "8-K",
+        "issuer": "Arista Networks, Inc.",
+        "published_at": "2026-02-12",
+        "title": "8-K  - Current report",
+        "uri": "https://www.sec.gov/Archives/edgar/data/1596532/000159653226000010/0001596532-26-000010-index.htm",
+        "accession_number": "0001596532-26-000010"
+      },
+      {
+        "document_id": "1596532:0001596532-25-000286",
+        "document_type": "10-Q",
+        "issuer": "Arista Networks, Inc.",
+        "published_at": "2025-11-05",
+        "title": "10-Q  - Quarterly report [Sections 13 or 15(d)]",
+        "uri": "https://www.sec.gov/Archives/edgar/data/1596532/000159653225000286/0001596532-25-000286-index.htm",
+        "accession_number": "0001596532-25-000286"
+      },
+      {
+        "document_id": "1596532:0001596532-25-000284",
+        "document_type": "8-K",
+        "issuer": "Arista Networks, Inc.",
+        "published_at": "2025-11-04",
+        "title": "8-K  - Current report",
+        "uri": "https://www.sec.gov/Archives/edgar/data/1596532/000159653225000284/0001596532-25-000284-index.htm",
+        "accession_number": "0001596532-25-000284"
+      },
+      {
+        "document_id": "1596532:0001596532-25-000258",
+        "document_type": "8-K",
+        "issuer": "Arista Networks, Inc.",
+        "published_at": "2025-09-08",
+        "title": "8-K  - Current report",
+        "uri": "https://www.sec.gov/Archives/edgar/data/1596532/000159653225000258/0001596532-25-000258-index.htm",
+        "accession_number": "0001596532-25-000258"
+      },
+      {
+        "document_id": "1596532:0001596532-25-000216",
+        "document_type": "10-Q",
+        "issuer": "Arista Networks, Inc.",
+        "published_at": "2025-08-06",
+        "title": "10-Q  - Quarterly report [Sections 13 or 15(d)]",
+        "uri": "https://www.sec.gov/Archives/edgar/data/1596532/000159653225000216/0001596532-25-000216-index.htm",
+        "accession_number": "0001596532-25-000216"
+      },
+      {
+        "document_id": "1596532:0001596532-25-000214",
+        "document_type": "8-K",
+        "issuer": "Arista Networks, Inc.",
+        "published_at": "2025-08-05",
+        "title": "8-K  - Current report",
+        "uri": "https://www.sec.gov/Archives/edgar/data/1596532/000159653225000214/0001596532-25-000214-index.htm",
+        "accession_number": "0001596532-25-000214"
+      },
+      {
+        "document_id": "1596532:0001596532-25-000170",
+        "document_type": "8-K",
+        "issuer": "Arista Networks, Inc.",
+        "published_at": "2025-06-16",
+        "title": "8-K  - Current report",
+        "uri": "https://www.sec.gov/Archives/edgar/data/1596532/000159653225000170/0001596532-25-000170-index.htm",
+        "accession_number": "0001596532-25-000170"
+      },
+      {
+        "document_id": "1596532:0001596532-25-000148",
+        "document_type": "8-K",
+        "issuer": "Arista Networks, Inc.",
+        "published_at": "2025-06-03",
+        "title": "8-K  - Current report",
+        "uri": "https://www.sec.gov/Archives/edgar/data/1596532/000159653225000148/0001596532-25-000148-index.htm",
+        "accession_number": "0001596532-25-000148"
+      },
+      {
+        "document_id": "1596532:0001596532-25-000106",
+        "document_type": "10-Q",
+        "issuer": "Arista Networks, Inc.",
+        "published_at": "2025-05-07",
+        "title": "10-Q  - Quarterly report [Sections 13 or 15(d)]",
+        "uri": "https://www.sec.gov/Archives/edgar/data/1596532/000159653225000106/0001596532-25-000106-index.htm",
+        "accession_number": "0001596532-25-000106"
+      },
+      {
+        "document_id": "1596532:0001596532-25-000103",
+        "document_type": "8-K",
+        "issuer": "Arista Networks, Inc.",
+        "published_at": "2025-05-06",
+        "title": "8-K  - Current report",
+        "uri": "https://www.sec.gov/Archives/edgar/data/1596532/000159653225000103/0001596532-25-000103-index.htm",
+        "accession_number": "0001596532-25-000103"
+      },
+      {
+        "document_id": "1596532:0001596532-25-000077",
+        "document_type": "8-K",
+        "issuer": "Arista Networks, Inc.",
+        "published_at": "2025-03-17",
+        "title": "8-K  - Current report",
+        "uri": "https://www.sec.gov/Archives/edgar/data/1596532/000159653225000077/0001596532-25-000077-index.htm",
+        "accession_number": "0001596532-25-000077"
+      },
+      {
+        "document_id": "1596532:0001596532-25-000028",
+        "document_type": "10-K",
+        "issuer": "Arista Networks, Inc.",
+        "published_at": "2025-02-19",
+        "title": "10-K  - Annual report [Section 13 and 15(d), not S-K Item 405]",
+        "uri": "https://www.sec.gov/Archives/edgar/data/1596532/000159653225000028/0001596532-25-000028-index.htm",
+        "accession_number": "0001596532-25-000028"
+      },
+      {
+        "document_id": "1596532:0001596532-25-000018",
+        "document_type": "8-K",
+        "issuer": "Arista Networks, Inc.",
+        "published_at": "2025-02-18",
+        "title": "8-K  - Current report",
+        "uri": "https://www.sec.gov/Archives/edgar/data/1596532/000159653225000018/0001596532-25-000018-index.htm",
+        "accession_number": "0001596532-25-000018"
+      },
+      {
+        "document_id": "1596532:0001596532-24-000402",
+        "document_type": "8-K",
+        "issuer": "Arista Networks, Inc.",
+        "published_at": "2024-12-03",
+        "title": "8-K  - Current report",
+        "uri": "https://www.sec.gov/Archives/edgar/data/1596532/000159653224000402/0001596532-24-000402-index.htm",
+        "accession_number": "0001596532-24-000402"
+      },
+      {
+        "document_id": "1596532:0001596532-24-000368",
+        "document_type": "10-Q",
+        "issuer": "Arista Networks, Inc.",
+        "published_at": "2024-11-08",
+        "title": "10-Q  - Quarterly report [Sections 13 or 15(d)]",
+        "uri": "https://www.sec.gov/Archives/edgar/data/1596532/000159653224000368/0001596532-24-000368-index.htm",
+        "accession_number": "0001596532-24-000368"
+      },
+      {
+        "document_id": "1596532:0001596532-24-000366",
+        "document_type": "8-K",
+        "issuer": "Arista Networks, Inc.",
+        "published_at": "2024-11-07",
+        "title": "8-K  - Current report",
+        "uri": "https://www.sec.gov/Archives/edgar/data/1596532/000159653224000366/0001596532-24-000366-index.htm",
+        "accession_number": "0001596532-24-000366"
+      },
+      {
+        "document_id": "1596532:0001596532-24-000279",
+        "document_type": "10-Q",
+        "issuer": "Arista Networks, Inc.",
+        "published_at": "2024-07-31",
+        "title": "10-Q  - Quarterly report [Sections 13 or 15(d)]",
+        "uri": "https://www.sec.gov/Archives/edgar/data/1596532/000159653224000279/0001596532-24-000279-index.htm",
+        "accession_number": "0001596532-24-000279"
+      },
+      {
+        "document_id": "1596532:0001596532-24-000277",
+        "document_type": "8-K",
+        "issuer": "Arista Networks, Inc.",
+        "published_at": "2024-07-30",
+        "title": "8-K  - Current report",
+        "uri": "https://www.sec.gov/Archives/edgar/data/1596532/000159653224000277/0001596532-24-000277-index.htm",
+        "accession_number": "0001596532-24-000277"
+      },
+      {
+        "document_id": "1596532:0001596532-24-000233",
+        "document_type": "8-K",
+        "issuer": "Arista Networks, Inc.",
+        "published_at": "2024-06-10",
+        "title": "8-K  - Current report",
+        "uri": "https://www.sec.gov/Archives/edgar/data/1596532/000159653224000233/0001596532-24-000233-index.htm",
+        "accession_number": "0001596532-24-000233"
+      },
+      {
+        "document_id": "1596532:0001596532-24-000219",
+        "document_type": "8-K",
+        "issuer": "Arista Networks, Inc.",
+        "published_at": "2024-05-24",
+        "title": "8-K  - Current report",
+        "uri": "https://www.sec.gov/Archives/edgar/data/1596532/000159653224000219/0001596532-24-000219-index.htm",
+        "accession_number": "0001596532-24-000219"
+      },
+      {
+        "document_id": "1596532:0001596532-24-000173",
+        "document_type": "10-Q",
+        "issuer": "Arista Networks, Inc.",
+        "published_at": "2024-05-08",
+        "title": "10-Q  - Quarterly report [Sections 13 or 15(d)]",
+        "uri": "https://www.sec.gov/Archives/edgar/data/1596532/000159653224000173/0001596532-24-000173-index.htm",
+        "accession_number": "0001596532-24-000173"
+      },
+      {
+        "document_id": "1596532:0001596532-24-000171",
+        "document_type": "8-K",
+        "issuer": "Arista Networks, Inc.",
+        "published_at": "2024-05-07",
+        "title": "8-K  - Current report",
+        "uri": "https://www.sec.gov/Archives/edgar/data/1596532/000159653224000171/0001596532-24-000171-index.htm",
+        "accession_number": "0001596532-24-000171"
+      }
+    ],
+    "company": {
+      "ticker": "ANET",
+      "title": "Arista Networks, Inc.",
+      "cik": 1596532
+    }
+  },
+  "provenance": [
+    {
+      "source_id": "sec-browse-1596532",
+      "source_type": "document_source",
+      "source_system": "sec_edgar_public",
+      "retrieved_at": "2026-03-18T03:51:16.615937Z",
+      "as_of_datetime": null,
+      "license_scope": "external_public",
+      "confidence": 0.9,
+      "content_hash": "sec-browse-1596532"
+    }
+  ],
+  "errors": []
 }

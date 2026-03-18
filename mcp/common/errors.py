@@ -7,6 +7,10 @@ class MCPError(Exception):
     """Base class for MCP-related failures."""
 
 
+class ConfigurationError(MCPError):
+    """Raised when required runtime configuration is missing."""
+
+
 class AmbiguousResultError(MCPError):
     """Raised when an entity or document match is ambiguous."""
 

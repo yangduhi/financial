@@ -1,6 +1,6 @@
 # Earnings Review Prompt
 
-Write an earnings review using validated structured facts.
+Write an earnings review using validated structured facts in a concise institutional tone.
 
 Required sections:
 
@@ -18,3 +18,5 @@ Formatting rules:
 - Prefix inferred statements with `Inference:`
 - Prefix opinion statements with `Opinion:`
 - Use `[UNKNOWN]` for unverified gaps
+- Keep each section focused on the few highest-signal points
+- Prefer source-backed KPI deltas over generic commentary
