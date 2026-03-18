@@ -1,0 +1,25 @@
+version: 1
+patterns:
+  recent_quarters:
+    - regex: "최근\\s*(\\d+)\\s*분기"
+      type: "recent_quarters"
+    - regex: "최근\\s*분기"
+      type: "recent_quarters"
+      fixed_value: 1
+  qoq_compare:
+    - regex: "전분기"
+      comparison: "qoq"
+    - regex: "직전\\s*분기"
+      comparison: "qoq"
+  evidence_recent:
+    - regex: "최근\\s*실적\\s*발표"
+      type: "recent_earnings_document"
+    - regex: "최근\\s*10-Q"
+      type: "recent_10q"
+    - regex: "최근\\s*10-K"
+      type: "recent_10k"
+
+defaults:
+  recent_result_quarters: 1
+  recent_trend_quarters: 4
+  filing_sort: "filing_date_desc"

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "q001",
+    "question": "ANET의 최근 4분기 영업이익 변동을 알려줘.",
+    "status": "OK",
+    "answer": "Arista Networks, Inc.의 최근 4분기 영업이익은 전반적으로 증가 흐름이었습니다.\n\n핵심 수치:\n- 2025Q1: 858800000.0 (q/q: 7.4%)\n- 2025Q2: 986200000.0 (q/q: 14.8%)\n- 2025Q3: 978200000.0 (q/q: -0.8%)\n- 2025Q4: 1032900000.0 (q/q: 5.6%)\n\n해석:\n- 최신 분기 값은 2025Q4 기준 1032900000.0입니다.\n\n근거:\n- metric source metadata는 확보되었으나 추가 excerpt는 생략했습니다."
+  },
+  {
+    "id": "q002",
+    "question": "ANET의 최근 4분기 EPS 추세를 요약해줘.",
+    "status": "OK",
+    "answer": "Arista Networks, Inc.의 최근 4분기 EPS은 전반적으로 증가 흐름이었습니다.\n\n핵심 수치:\n- 2025Q1: 0.64 (q/q: 3.2%)\n- 2025Q2: 0.7 (q/q: 9.4%)\n- 2025Q3: 0.67 (q/q: -4.3%)\n- 2025Q4: 0.75 (q/q: 11.9%)\n\n해석:\n- 최신 분기 값은 2025Q4 기준 0.75입니다.\n\n근거:\n- metric source metadata는 확보되었으나 추가 excerpt는 생략했습니다."
+  },
+  {
+    "id": "q003",
+    "question": "ANET의 최근 4분기 FCF 변동을 알려줘.",
+    "status": "OK",
+    "answer": "Arista Networks, Inc.의 최근 4분기 FCF은 전반적으로 증가 흐름이었습니다.\n\n핵심 수치:\n- 2025Q1: 613300000.0 (q/q: -39.8%)\n- 2025Q2: 1176100000.0 (q/q: 91.8%)\n- 2025Q3: 1238100000.0 (q/q: 5.3%)\n- 2025Q4: 1224900000.0 (q/q: -1.1%)\n\n해석:\n- 최신 분기 값은 2025Q4 기준 1224900000.0입니다.\n\n근거:\n- metric source metadata는 확보되었으나 추가 excerpt는 생략했습니다."
+  },
+  {
+    "id": "q004",
+    "question": "ANET의 최근 4분기 순이익 흐름을 알려줘.",
+    "status": "OK",
+    "answer": "Arista Networks, Inc.의 최근 4분기 순이익은 전반적으로 증가 흐름이었습니다.\n\n핵심 수치:\n- 2025Q1: 813800000.0 (q/q: 1.6%)\n- 2025Q2: 888800000.0 (q/q: 9.2%)\n- 2025Q3: 853000000.0 (q/q: -4.0%)\n- 2025Q4: 955800000.0 (q/q: 12.1%)\n\n해석:\n- 최신 분기 값은 2025Q4 기준 955800000.0입니다.\n\n근거:\n- metric source metadata는 확보되었으나 추가 excerpt는 생략했습니다."
+  },
+  {
+    "id": "q005",
+    "question": "Arista Networks의 최근 4분기 영업이익 변동을 알려줘.",
+    "status": "OK",
+    "answer": "Arista Networks, Inc.의 최근 4분기 영업이익은 전반적으로 증가 흐름이었습니다.\n\n핵심 수치:\n- 2025Q1: 858800000.0 (q/q: 7.4%)\n- 2025Q2: 986200000.0 (q/q: 14.8%)\n- 2025Q3: 978200000.0 (q/q: -0.8%)\n- 2025Q4: 1032900000.0 (q/q: 5.6%)\n\n해석:\n- 최신 분기 값은 2025Q4 기준 1032900000.0입니다.\n\n근거:\n- metric source metadata는 확보되었으나 추가 excerpt는 생략했습니다."
+  },
+  {
+    "id": "q006",
+    "question": "Arista의 최근 4분기 EPS 추세를 요약해줘.",
+    "status": "OK",
+    "answer": "Arista Networks, Inc.의 최근 4분기 EPS은 전반적으로 증가 흐름이었습니다.\n\n핵심 수치:\n- 2025Q1: 0.64 (q/q: 3.2%)\n- 2025Q2: 0.7 (q/q: 9.4%)\n- 2025Q3: 0.67 (q/q: -4.3%)\n- 2025Q4: 0.75 (q/q: 11.9%)\n\n해석:\n- 최신 분기 값은 2025Q4 기준 0.75입니다.\n\n근거:\n- metric source metadata는 확보되었으나 추가 excerpt는 생략했습니다."
+  },
+  {
+    "id": "q007",
+    "question": "ANET의 최근 분기와 직전 분기 영업이익 비교해줘.",
+    "status": "OK",
+    "answer": "Arista Networks, Inc.의 영업이익은 최근 분기 기준 직전 분기 대비 증가했습니다.\n\n핵심 수치:\n- 직전 분기 2025Q3: 978,200,000\n- 최근 분기 2025Q4: 1,032,900,000\n- 증감률: 5.6%\n\n해석:\n- 2025Q4 기준 영업이익은 2025Q3 대비 증가 방향입니다.\n\n근거:\n- 추가 근거 excerpt는 확보되지 않았습니다."
+  },
+  {
+    "id": "q008",
+    "question": "ANET의 최근 분기 EPS는 직전 분기보다 어땠어?",
+    "status": "OK",
+    "answer": "Arista Networks, Inc.의 EPS은 최근 분기 기준 직전 분기 대비 증가했습니다.\n\n핵심 수치:\n- 직전 분기 2025Q3: 0.67\n- 최근 분기 2025Q4: 0.75\n- 증감률: 11.9%\n\n해석:\n- 2025Q4 기준 EPS은 2025Q3 대비 증가 방향입니다.\n\n근거:\n- 추가 근거 excerpt는 확보되지 않았습니다."
+  },
+  {
+    "id": "q009",
+    "question": "ANET의 최근 분기에 뭐가 좋아졌어?",
+    "status": "PARTIAL",
+    "answer": "Arista Networks, Inc.의 최근 분기에서 직전 분기 대비 개선된 항목은 아래와 같습니다.\n\n핵심 수치:\n- 개선된 핵심 항목을 확정할 데이터가 부족합니다.\n\n해석:\n- 비교 기준은 2025Q3 대비 2025Q4입니다.\n\n근거:\n- 추가 근거 excerpt는 확보되지 않았습니다."
+  },
+  {
+    "id": "q010",
+    "question": "ANET의 최근 실적 발표에서 가이던스 관련 핵심 문장만 알려줘.",
+    "status": "INSUFFICIENT_EVIDENCE",
+    "answer": "Arista Networks, Inc.의 최근 문서에서 가이던스 관련 직접 근거 문장을 충분히 확보하지 못했습니다.\n\n확인한 최근 문서:\n- 2026-02-12 8-K\n- 2025-11-05 10-Q\n- 2025-11-04 8-K\n\n제한:\n- 현재 확보된 최근 문서 기준에서 direct excerpt 매칭이 부족했습니다."
+  },
+  {
+    "id": "q011",
+    "question": "ANET의 최근 10-Q에서 guidance 관련 문장을 알려줘.",
+    "status": "INSUFFICIENT_EVIDENCE",
+    "answer": "Arista Networks, Inc.의 최근 문서에서 가이던스 관련 직접 근거 문장을 충분히 확보하지 못했습니다.\n\n확인한 최근 문서:\n- 2026-02-12 8-K\n- 2025-11-05 10-Q\n- 2025-11-04 8-K\n\n제한:\n- 현재 확보된 최근 문서 기준에서 direct excerpt 매칭이 부족했습니다."
+  },
+  {
+    "id": "q012",
+    "question": "Arista의 최근 실적 발표에서 outlook 관련 핵심 문장을 알려줘.",
+    "status": "INSUFFICIENT_EVIDENCE",
+    "answer": "Arista Networks, Inc.의 최근 문서에서 아웃룩 관련 직접 근거 문장을 충분히 확보하지 못했습니다.\n\n확인한 최근 문서:\n- 2026-02-12 8-K\n- 2025-11-05 10-Q\n- 2025-11-04 8-K\n\n제한:\n- 현재 확보된 최근 문서 기준에서 direct excerpt 매칭이 부족했습니다."
+  }
+]

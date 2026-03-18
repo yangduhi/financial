@@ -1,0 +1,63 @@
+version: 1
+metrics:
+  operating_income:
+    label_ko: "영업이익"
+    aliases_ko: ["영업이익", "영업 이익", "영익"]
+    aliases_en: ["operating income", "op income"]
+    provider_keys:
+      income_statement:
+        - "Total Operating Income As Reported"
+        - "Operating Income"
+        - "operatingIncome"
+
+  revenue:
+    label_ko: "매출"
+    aliases_ko: ["매출", "매출액", "탑라인"]
+    aliases_en: ["revenue", "sales", "topline"]
+    provider_keys:
+      income_statement:
+        - "Total Revenue"
+        - "Revenue"
+        - "revenue"
+
+  net_income:
+    label_ko: "순이익"
+    aliases_ko: ["순이익", "당기순이익"]
+    aliases_en: ["net income"]
+    provider_keys:
+      income_statement:
+        - "Net Income"
+        - "Net Income From Continuing Operation Net Minority Interest"
+        - "netIncome"
+
+  eps:
+    label_ko: "EPS"
+    aliases_ko: ["eps", "주당순이익", "희석eps", "희석 eps"]
+    aliases_en: ["eps", "diluted eps"]
+    provider_keys:
+      income_statement:
+        - "Diluted EPS"
+        - "Basic EPS"
+        - "eps"
+        - "epsDiluted"
+
+  fcf:
+    label_ko: "FCF"
+    aliases_ko: ["fcf", "잉여현금흐름", "자유현금흐름"]
+    aliases_en: ["free cash flow", "fcf"]
+    provider_keys:
+      cashflow:
+        - "Free Cash Flow"
+        - "freeCashFlow"
+
+  operating_margin:
+    label_ko: "영업이익률"
+    aliases_ko: ["영업이익률", "영업마진", "op margin"]
+    aliases_en: ["operating margin", "op margin"]
+    provider_keys: {}
+
+  gross_margin:
+    label_ko: "총이익률"
+    aliases_ko: ["총이익률", "gross margin", "매출총이익률"]
+    aliases_en: ["gross margin"]
+    provider_keys: {}

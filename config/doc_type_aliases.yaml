@@ -1,0 +1,10 @@
+version: 1
+logical_to_source:
+  earnings_release:
+    - "8-K"
+  earnings_call_transcript:
+    - "8-K"
+  "10-Q":
+    - "10-Q"
+  "10-K":
+    - "10-K"

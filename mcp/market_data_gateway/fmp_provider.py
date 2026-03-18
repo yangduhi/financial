@@ -73,8 +73,8 @@ def get_price_snapshot(ticker: str, as_of_datetime: str | None = None) -> ToolRe
             "snapshot": {
                 "close": quote.get("price"),
                 "open": quote.get("open"),
-                "high": quote.get("range"),
-                "low": quote.get("range"),
+                "high": None,
+                "low": None,
                 "volume": quote.get("volAvg"),
                 "as_of_datetime": target_dt.isoformat(),
                 "currency": quote.get("currency") or "USD",
@@ -105,17 +105,22 @@ def get_fundamentals(
     ticker: str, period: str = "quarterly", as_of_datetime: str | None = None
 ) -> ToolResponseEnvelope:
     target_dt = _parse_dt(as_of_datetime) or _now()
+    normalized_period = "quarter" if period in {"quarter", "quarterly"} else "annual"
     profile = _get_json("profile", symbol=ticker)
-    income = _get_json("income-statement", symbol=ticker, period=period, limit=4)
-    balance = _get_json("balance-sheet-statement", symbol=ticker, period=period, limit=4)
-    cashflow = _get_json("cash-flow-statement", symbol=ticker, period=period, limit=4)
-    enterprise = _get_json("enterprise-values", symbol=ticker, period=period, limit=4)
+    income = _get_json("income-statement", symbol=ticker, period=normalized_period, limit=4)
+    balance = _get_json(
+        "balance-sheet-statement", symbol=ticker, period=normalized_period, limit=4
+    )
+    cashflow = _get_json(
+        "cash-flow-statement", symbol=ticker, period=normalized_period, limit=4
+    )
+    enterprise = _get_json("enterprise-values", symbol=ticker, period=normalized_period, limit=4)
     profile_row = profile[0] if isinstance(profile, list) and profile else {}
     return ToolResponseEnvelope(
         ok=True,
         data={
             "ticker": ticker,
-            "period": period,
+            "period": normalized_period,
             "currency": profile_row.get("currency"),
             "profile": profile_row,
             "income_statement": income,

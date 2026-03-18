@@ -38,6 +38,25 @@
 - [ ] STEP5-002 Implement `qa_report.json` generation
 - [ ] STEP6-001 Finalize runbook and recovery procedure
 
+## MCP Practice Track
+
+- [x] MCPP-000 Write `docs/v1_scope.md`
+- [x] MCPP-001 Write `docs/mcp_tool_contracts.md`
+- [x] MCPP-002 Write `docs/metric_alias_standard.md`
+- [x] MCPP-003 Add `config/metric_aliases.yaml`
+- [x] MCPP-004 Add `config/period_rules.yaml`
+- [x] MCPP-005 Implement `resolve_entity`
+- [x] MCPP-006 Implement `get_quarterly_metrics`
+- [x] MCPP-007 Implement `get_metric_trend`
+- [x] MCPP-008 Implement `get_recent_filings`
+- [x] MCPP-009 Implement `get_source_evidence`
+- [x] MCPP-010 Implement `src/orchestration/nl_query_normalizer.py`
+- [x] MCPP-011 Implement `src/orchestration/nl_intent_parser.py`
+- [x] MCPP-012 Implement `src/orchestration/nl_tool_planner.py`
+- [x] MCPP-013 Implement `src/orchestration/nl_answer_generator.py`
+- [x] MCPP-014 Add natural-language query evaluation set
+- [x] MCPP-015 Add tool trace and failure logging
+
 ## Execution Rule
 
 Blocked decisions must be resolved before live data integration or QA promotion work begins.

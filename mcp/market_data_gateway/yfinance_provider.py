@@ -104,13 +104,14 @@ def get_fundamentals(
 ) -> ToolResponseEnvelope:
     del as_of_datetime
     ticker_obj = _ticker(ticker)
+    is_quarter = period in {"quarter", "quarterly"}
     income_stmt = (
-        ticker_obj.quarterly_income_stmt if period == "quarterly" else ticker_obj.income_stmt
+        ticker_obj.quarterly_income_stmt if is_quarter else ticker_obj.income_stmt
     )
     balance_sheet = (
-        ticker_obj.quarterly_balance_sheet if period == "quarterly" else ticker_obj.balance_sheet
+        ticker_obj.quarterly_balance_sheet if is_quarter else ticker_obj.balance_sheet
     )
-    cashflow = ticker_obj.quarterly_cashflow if period == "quarterly" else ticker_obj.cashflow
+    cashflow = ticker_obj.quarterly_cashflow if is_quarter else ticker_obj.cashflow
     info = ticker_obj.info or {}
 
     def frame_to_records(frame) -> list[dict[str, Any]]:

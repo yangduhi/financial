@@ -1,0 +1,98 @@
+[
+  {
+    "id": "q001",
+    "category": "metric_trend",
+    "question": "ANET의 최근 4분기 영업이익 변동을 알려줘.",
+    "expected_status": ["OK", "PARTIAL", "INSUFFICIENT_EVIDENCE"],
+    "expected_tool_plan": ["resolve_entity", "get_metric_trend"],
+    "required_answer_substrings": ["영업이익", "핵심 수치", "근거"]
+  },
+  {
+    "id": "q002",
+    "category": "metric_trend",
+    "question": "ANET의 최근 4분기 EPS 추세를 요약해줘.",
+    "expected_status": ["OK", "PARTIAL", "INSUFFICIENT_EVIDENCE"],
+    "expected_tool_plan": ["resolve_entity", "get_metric_trend"],
+    "required_answer_substrings": ["EPS", "핵심 수치", "근거"]
+  },
+  {
+    "id": "q003",
+    "category": "metric_trend",
+    "question": "ANET의 최근 4분기 FCF 변동을 알려줘.",
+    "expected_status": ["OK", "PARTIAL", "INSUFFICIENT_EVIDENCE"],
+    "expected_tool_plan": ["resolve_entity", "get_metric_trend"],
+    "required_answer_substrings": ["FCF", "핵심 수치", "근거"]
+  },
+  {
+    "id": "q004",
+    "category": "metric_trend",
+    "question": "ANET의 최근 4분기 순이익 흐름을 알려줘.",
+    "expected_status": ["OK", "PARTIAL", "INSUFFICIENT_EVIDENCE"],
+    "expected_tool_plan": ["resolve_entity", "get_metric_trend"],
+    "required_answer_substrings": ["순이익", "핵심 수치", "근거"]
+  },
+  {
+    "id": "q005",
+    "category": "metric_trend",
+    "question": "Arista Networks의 최근 4분기 영업이익 변동을 알려줘.",
+    "expected_status": ["OK", "PARTIAL", "INSUFFICIENT_EVIDENCE"],
+    "expected_tool_plan": ["resolve_entity", "get_metric_trend"],
+    "required_answer_substrings": ["영업이익", "핵심 수치", "근거"]
+  },
+  {
+    "id": "q006",
+    "category": "metric_trend",
+    "question": "Arista의 최근 4분기 EPS 추세를 요약해줘.",
+    "expected_status": ["OK", "PARTIAL", "INSUFFICIENT_EVIDENCE"],
+    "expected_tool_plan": ["resolve_entity", "get_metric_trend"],
+    "required_answer_substrings": ["EPS", "핵심 수치", "근거"]
+  },
+  {
+    "id": "q007",
+    "category": "metric_compare",
+    "question": "ANET의 최근 분기와 직전 분기 영업이익 비교해줘.",
+    "expected_status": ["OK", "PARTIAL", "INSUFFICIENT_EVIDENCE"],
+    "expected_tool_plan": ["resolve_entity", "get_quarterly_metrics", "get_source_evidence"],
+    "required_answer_substrings": ["영업이익", "직전 분기", "증감률", "근거"]
+  },
+  {
+    "id": "q008",
+    "category": "metric_compare",
+    "question": "ANET의 최근 분기 EPS는 직전 분기보다 어땠어?",
+    "expected_status": ["OK", "PARTIAL", "INSUFFICIENT_EVIDENCE"],
+    "expected_tool_plan": ["resolve_entity", "get_quarterly_metrics", "get_source_evidence"],
+    "required_answer_substrings": ["EPS", "직전 분기", "증감률", "근거"]
+  },
+  {
+    "id": "q009",
+    "category": "metric_compare",
+    "question": "ANET의 최근 분기에 뭐가 좋아졌어?",
+    "expected_status": ["OK", "PARTIAL", "INSUFFICIENT_EVIDENCE"],
+    "expected_tool_plan": ["resolve_entity", "get_quarterly_metrics", "get_source_evidence"],
+    "required_answer_substrings": ["개선", "핵심 수치", "근거"]
+  },
+  {
+    "id": "q010",
+    "category": "filing_evidence",
+    "question": "ANET의 최근 실적 발표에서 가이던스 관련 핵심 문장만 알려줘.",
+    "expected_status": ["OK", "INSUFFICIENT_EVIDENCE"],
+    "expected_tool_plan": ["resolve_entity", "get_recent_filings", "get_source_evidence"],
+    "required_answer_substrings": ["가이던스", "근거"]
+  },
+  {
+    "id": "q011",
+    "category": "filing_evidence",
+    "question": "ANET의 최근 10-Q에서 guidance 관련 문장을 알려줘.",
+    "expected_status": ["OK", "INSUFFICIENT_EVIDENCE"],
+    "expected_tool_plan": ["resolve_entity", "get_recent_filings", "get_source_evidence"],
+    "required_answer_substrings": ["가이던스", "근거"]
+  },
+  {
+    "id": "q012",
+    "category": "filing_evidence",
+    "question": "Arista의 최근 실적 발표에서 outlook 관련 핵심 문장을 알려줘.",
+    "expected_status": ["OK", "INSUFFICIENT_EVIDENCE"],
+    "expected_tool_plan": ["resolve_entity", "get_recent_filings", "get_source_evidence"],
+    "required_answer_substrings": ["관련", "근거"]
+  }
+]
