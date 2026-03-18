@@ -11,7 +11,7 @@ RUN_STATUS_ORDER = [
     "reported",
     "qa_passed",
     "qa_failed",
-    "failed"
+    "failed",
 ]
 
 
