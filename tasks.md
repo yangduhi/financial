@@ -17,15 +17,15 @@
 
 ## Pending Implementation
 
-- [ ] STEP1-001 Create `AGENTS.md`
-- [ ] STEP1-002 Create `.codex/config.toml`
-- [ ] STEP1-003 Create `.codex/prompts/`
-- [ ] STEP1-004 Create repo scaffold from `docs/step_1_진행내용.md`
-- [ ] STEP2-001 Implement MCP common contract layer
+- [x] STEP1-001 Create `AGENTS.md`
+- [x] STEP1-002 Create `.codex/config.toml`
+- [x] STEP1-003 Create `.codex/prompts/`
+- [x] STEP1-004 Create repo scaffold from `docs/step_1_진행내용.md`
+- [x] STEP2-001 Implement MCP common contract layer scaffold
 - [ ] STEP2-002 Implement `docs_gateway`
 - [ ] STEP2-003 Implement `market_data_gateway`
-- [ ] STEP2-004 Add smoke and contract tests
-- [ ] STEP3-001 Implement canonical schemas
+- [x] STEP2-004 Add smoke and contract tests scaffold
+- [x] STEP3-001 Implement canonical schemas
 - [ ] STEP3-002 Implement raw/parsed/normalized/derived storage flow
 - [ ] STEP3-003 Implement evidence graph output
 - [ ] STEP4-001 Implement input loader and run manifest creation
