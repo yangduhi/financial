@@ -12,7 +12,7 @@
 | market | FMP | `FMP_API_KEY` | primary market source where endpoint is available | active |
 | market | Finnhub | `FINNHUB_API_KEY` | fallback and verification for quote/profile/peers | active |
 | market | yfinance | none | fallback for blocked or unavailable endpoints | active |
-| macro | FRED | `FRED_API_KEY` | macro gateway | configured |
+| macro | FRED | `FRED_API_KEY` | macro gateway | active |
 
 ## Field Mapping
 

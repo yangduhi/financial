@@ -38,6 +38,16 @@
 - [ ] STEP5-002 Implement `qa_report.json` generation
 - [ ] STEP6-001 Finalize runbook and recovery procedure
 
+## MCP Practice Track
+
+- [ ] MCPP-001 Write tool contracts for natural-language-oriented MCP tools
+- [ ] MCPP-002 Implement `resolve_entity`
+- [ ] MCPP-003 Implement `get_quarterly_metrics`
+- [ ] MCPP-004 Implement `get_metric_trend`
+- [ ] MCPP-005 Implement `get_source_evidence`
+- [ ] MCPP-006 Add Korean metric alias mapping
+- [ ] MCPP-007 Add natural-language query evaluation set
+
 ## Execution Rule
 
 Blocked decisions must be resolved before live data integration or QA promotion work begins.
