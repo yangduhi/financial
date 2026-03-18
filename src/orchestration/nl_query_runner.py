@@ -11,7 +11,11 @@ from .intent_tools import (
     get_source_evidence,
     resolve_entity,
 )
-from .nl_answer_generator import generate_metric_trend_answer
+from .nl_answer_generator import (
+    generate_filing_evidence_answer,
+    generate_metric_compare_answer,
+    generate_metric_trend_answer,
+)
 from .nl_intent_parser import parse_intent
 from .nl_query_normalizer import normalize_query
 from .nl_tool_planner import plan_tools
@@ -42,6 +46,12 @@ def run_query(query: str) -> dict[str, Any]:
     intent = parsed["intent"]
 
     if intent == "metric_trend":
+        evidence_result = get_source_evidence(
+            identifier=identifier,
+            metric=parsed["metric"],
+            topic=parsed.get("topic"),
+            limit=1,
+        )
         trend_result = get_metric_trend(
             identifier=identifier,
             metric=parsed["metric"],
@@ -55,6 +65,7 @@ def run_query(query: str) -> dict[str, Any]:
             entity["selected"]["company_name"],
             parsed["metric"],
             trend_result,
+            evidence_result=evidence_result,
         )
         return {"status": trend_result["status"], "trace": trace, "answer": answer}
 
@@ -81,7 +92,12 @@ def run_query(query: str) -> dict[str, Any]:
             "status": evidence_result["status"],
             "evidence_count": len(evidence_result.get("evidence", [])),
         }
-        answer = "최근 분기 비교 답변 템플릿은 다음 단계에서 구체화합니다."
+        answer = generate_metric_compare_answer(
+            entity["selected"]["company_name"],
+            metrics_result,
+            metric=parsed.get("metric"),
+            evidence_result=evidence_result,
+        )
         return {"status": metrics_result["status"], "trace": trace, "answer": answer}
 
     if intent == "filing_evidence":
@@ -104,7 +120,12 @@ def run_query(query: str) -> dict[str, Any]:
             "status": evidence_result["status"],
             "evidence_count": len(evidence_result.get("evidence", [])),
         }
-        answer = "근거 문장 추출 답변 템플릿은 다음 단계에서 구체화합니다."
+        answer = generate_filing_evidence_answer(
+            entity["selected"]["company_name"],
+            parsed.get("topic"),
+            filings_result,
+            evidence_result,
+        )
         return {"status": evidence_result["status"], "trace": trace, "answer": answer}
 
     return {"status": "UNSUPPORTED_INTENT", "trace": trace, "answer": None}

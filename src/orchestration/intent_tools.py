@@ -4,12 +4,20 @@ from __future__ import annotations
 
 from typing import Any, cast
 
+from mcp.common.errors import SourceUnavailableError
 from mcp.docs_gateway import server as docs_server
 from mcp.docs_gateway.sec_edgar import load_company_tickers
 from mcp.market_data_gateway import server as market_server
 
 from .config_loader import load_doc_type_aliases, load_metric_aliases
 from .trend_service import build_summary_flags, build_trend_series, extract_metric_series
+
+NOISE_EXCERPT_MARKERS = [
+    "Rulemaking Activity",
+    "Self-Regulatory Organization",
+    "Administrative Proceedings",
+    "No-Action, Interpretive, and Exemptive Letters",
+]
 
 
 def _canonical_identifier(ticker: str, market_hint: str = "us") -> str:
@@ -87,7 +95,12 @@ def get_recent_filings(
     mapped_doc_types: list[str] = []
     for doc_type in doc_types:
         mapped_doc_types.extend(alias_map.get(doc_type, [doc_type]))
-    response = docs_server.search_documents(query=None, company=ticker, doc_types=mapped_doc_types)
+    try:
+        response = docs_server.search_documents(
+            query=None, company=ticker, doc_types=mapped_doc_types
+        )
+    except SourceUnavailableError:
+        return {"status": "NOT_FOUND", "items": []}
     items = []
     for row in response.data.get("results", [])[:limit]:
         items.append(
@@ -248,13 +261,18 @@ def get_source_evidence(
 
     evidence = []
     for filing in filings["items"]:
-        bundle = docs_server.build_citation_bundle(
-            document_id=filing["doc_id"], spans_or_sections=search_terms
-        )
+        try:
+            bundle = docs_server.build_citation_bundle(
+                document_id=filing["doc_id"], spans_or_sections=search_terms
+            )
+        except SourceUnavailableError:
+            continue
         for citation_item in bundle.data.get("citations", []):
             citation = citation_item["citation"]
             excerpt = citation.get("extracted_text", "")
             if not excerpt or excerpt == "[UNKNOWN]":
+                continue
+            if any(marker in excerpt for marker in NOISE_EXCERPT_MARKERS):
                 continue
             evidence.append(
                 {

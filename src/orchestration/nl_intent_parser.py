@@ -8,7 +8,7 @@ from typing import Any
 from .config_loader import load_metric_aliases, load_period_rules
 
 EVIDENCE_KEYWORDS = ["문장", "언급", "가이던스", "실적 발표", "10-Q", "10-K", "보여줘"]
-COMPARE_KEYWORDS = ["전분기", "직전 분기", "비교", "얼마나 늘", "얼마나 줄"]
+COMPARE_KEYWORDS = ["전분기", "직전 분기", "비교", "얼마나 늘", "얼마나 줄", "좋아졌", "개선"]
 TREND_KEYWORDS = ["최근 4분기", "추세", "변동", "흐름"]
 AMBIGUOUS_METRICS = {"마진", "이익", "실적"}
 
@@ -63,7 +63,18 @@ def parse_intent(query: str, entity_hint: str | None = None) -> dict[str, Any]:
     comparison = _extract_comparison(query)
 
     lowered = query.lower()
-    if metric_info["status"] == "AMBIGUOUS_METRIC":
+    has_evidence_keyword = any(keyword in query for keyword in EVIDENCE_KEYWORDS)
+
+    if has_evidence_keyword:
+        intent = "filing_evidence"
+    elif any(keyword in query for keyword in COMPARE_KEYWORDS):
+        intent = "metric_compare"
+    elif any(keyword in query for keyword in TREND_KEYWORDS) or metric_info["metric"]:
+        intent = "metric_trend"
+    else:
+        intent = None
+
+    if metric_info["status"] == "AMBIGUOUS_METRIC" and intent != "filing_evidence":
         return {
             "status": "AMBIGUOUS_METRIC",
             "entity_hint": entity_hint,
@@ -72,15 +83,6 @@ def parse_intent(query: str, entity_hint: str | None = None) -> dict[str, Any]:
             "comparison": comparison,
             "intent": None,
         }
-
-    if any(keyword in query for keyword in EVIDENCE_KEYWORDS):
-        intent = "filing_evidence"
-    elif any(keyword in query for keyword in COMPARE_KEYWORDS):
-        intent = "metric_compare"
-    elif any(keyword in query for keyword in TREND_KEYWORDS) or metric_info["metric"]:
-        intent = "metric_trend"
-    else:
-        intent = None
 
     if not intent:
         return {
@@ -95,6 +97,8 @@ def parse_intent(query: str, entity_hint: str | None = None) -> dict[str, Any]:
     topic = None
     if "가이던스" in query or "guidance" in lowered:
         topic = "guidance"
+    elif "outlook" in lowered or "아웃룩" in query:
+        topic = "outlook"
 
     return {
         "status": "OK",

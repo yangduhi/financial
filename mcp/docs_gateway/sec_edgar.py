@@ -77,7 +77,8 @@ def resolve_company(company_or_ticker: str) -> dict[str, Any]:
     return matches[0]
 
 
-def _browse_feed(company_or_ticker: str, count: int = 40) -> ET.Element:
+@lru_cache(maxsize=64)
+def _browse_feed(company_or_ticker: str, count: int = 12) -> ET.Element:
     url = SEC_BROWSE_EDGAR_URL.format(company=company_or_ticker, count=count)
     try:
         response = _session().get(url, timeout=30)
@@ -89,7 +90,7 @@ def _browse_feed(company_or_ticker: str, count: int = 40) -> ET.Element:
     return ET.fromstring(response.text)
 
 
-def _recent_filings(company_record: dict[str, Any], count: int = 40) -> list[dict[str, Any]]:
+def _recent_filings(company_record: dict[str, Any], count: int = 12) -> list[dict[str, Any]]:
     root = _browse_feed(company_record["ticker"], count=count)
     ns = {"atom": "http://www.w3.org/2005/Atom"}
     filings: list[dict[str, Any]] = []

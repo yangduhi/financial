@@ -40,5 +40,47 @@
     "status": "OK",
     "passed": true,
     "reasons": []
+  },
+  {
+    "id": "q007",
+    "question": "ANET의 최근 분기와 직전 분기 영업이익 비교해줘.",
+    "status": "OK",
+    "passed": true,
+    "reasons": []
+  },
+  {
+    "id": "q008",
+    "question": "ANET의 최근 분기 EPS는 직전 분기보다 어땠어?",
+    "status": "OK",
+    "passed": true,
+    "reasons": []
+  },
+  {
+    "id": "q009",
+    "question": "ANET의 최근 분기에 뭐가 좋아졌어?",
+    "status": "PARTIAL",
+    "passed": true,
+    "reasons": []
+  },
+  {
+    "id": "q010",
+    "question": "ANET의 최근 실적 발표에서 가이던스 관련 핵심 문장만 알려줘.",
+    "status": "INSUFFICIENT_EVIDENCE",
+    "passed": true,
+    "reasons": []
+  },
+  {
+    "id": "q011",
+    "question": "ANET의 최근 10-Q에서 guidance 관련 문장을 알려줘.",
+    "status": "INSUFFICIENT_EVIDENCE",
+    "passed": true,
+    "reasons": []
+  },
+  {
+    "id": "q012",
+    "question": "Arista의 최근 실적 발표에서 outlook 관련 핵심 문장을 알려줘.",
+    "status": "INSUFFICIENT_EVIDENCE",
+    "passed": true,
+    "reasons": []
   }
 ]

@@ -4,5 +4,11 @@
   "q003": ["resolve_entity", "get_metric_trend"],
   "q004": ["resolve_entity", "get_metric_trend"],
   "q005": ["resolve_entity", "get_metric_trend"],
-  "q006": ["resolve_entity", "get_metric_trend"]
+  "q006": ["resolve_entity", "get_metric_trend"],
+  "q007": ["resolve_entity", "get_quarterly_metrics", "get_source_evidence"],
+  "q008": ["resolve_entity", "get_quarterly_metrics", "get_source_evidence"],
+  "q009": ["resolve_entity", "get_quarterly_metrics", "get_source_evidence"],
+  "q010": ["resolve_entity", "get_recent_filings", "get_source_evidence"],
+  "q011": ["resolve_entity", "get_recent_filings", "get_source_evidence"],
+  "q012": ["resolve_entity", "get_recent_filings", "get_source_evidence"]
 }
